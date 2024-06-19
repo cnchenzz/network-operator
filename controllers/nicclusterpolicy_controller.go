@@ -184,6 +184,7 @@ func (r *NicClusterPolicyReconciler) requeue() (reconcile.Result, error) {
 // handleMOFEDWaitLabels updates nodes labels to mark device plugins should wait for OFED pod
 // Set nvidia.com/ofed.wait=false if OFED is not deployed.
 // returns true if requeue (resync) is required
+
 func (r *NicClusterPolicyReconciler) handleMOFEDWaitLabels(
 	ctx context.Context, cr *mellanoxv1alpha1.NicClusterPolicy) (bool, error) {
 	reqLogger := log.FromContext(ctx)
